@@ -5,8 +5,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
 // === Sound Effects ===
-const ignitionSound = new Audio('ignition.mp3');
-const stageSeparationSound = new Audio('stage_separation.mp3');
+// const ignitionSound = new Audio('ignition.mp3');
+// const stageSeparationSound = new Audio('stage_separation.mp3');
 // const parachuteSound = new Audio('parachute.mp3');
 
 
