@@ -1,12 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  base: '/3D-Rocket_UI/',
-})
-
 
 
 // === Sound Effects ===
