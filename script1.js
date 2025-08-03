@@ -2,13 +2,19 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-const loader = new GLTFLoader();
-loader.load('./Public/rocket_scene.glb', function (gltf) {
-  scene.add(gltf.scene);
-}, undefined, function (error) {
+// const loader = new GLTFLoader();
+// loader.load('./Public/rocket_scene.glb', function (gltf) {
+//   scene.add(gltf.scene);
+// }, undefined, function (error) {
+//   console.error('Error loading model:', error);
+// });
+
+loader.load('models/rocket.glb', function(gltf) {
+  const rocket = gltf.scene;
+  scene.add(rocket);
+}, undefined, function(error) {
   console.error('Error loading model:', error);
 });
-
 
 
 // // === Sound Effects ===
