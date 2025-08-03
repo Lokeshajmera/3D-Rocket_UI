@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const loader = new GLTFLoader();
-loader.load('.Public/rocket_scene.glb', function (gltf) {
+loader.load('./Public/rocket_scene.glb', function (gltf) {
   scene.add(gltf.scene);
 }, undefined, function (error) {
   console.error('Error loading model:', error);
@@ -22,7 +22,8 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0a0c12);
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
+camera.position.set(0, 2, 10); // Better viewing angle
+camera.lookAt(0, 0, 0); // Ensure camera points at scene center
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById("scene"), 
@@ -121,9 +122,9 @@ loader.load(
     rocket = gltf.scene;
     rocket.scale.set(0.5, 0.5, 0.5);
 
-    const box = new THREE.Box3().setFromObject(rocket);
-    const center = box.getCenter(new THREE.Vector3());
-    rocket.position.sub(center);
+    // const box = new THREE.Box3().setFromObject(rocket);
+    // const center = box.getCenter(new THREE.Vector3());
+    // rocket.position.sub(center);
 
     const rocketBox = new THREE.Box3().setFromObject(rocket);
     const rocketMinY = rocketBox.min.y;
