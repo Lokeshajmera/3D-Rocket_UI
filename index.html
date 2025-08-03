@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="UTF-8" />
+  <title>3D Rocket Orbit UI</title>
+  <link rel="stylesheet" href="style2.css" />
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.0/dist/nipplejs.min.js"></script>
+
+</head>
+<body>
+  <div class="overlay-ui">
+    <!-- Altitude Chart Container -->
+<div class="altitude-graph-container">
+  <canvas id="altitudeChart" width="400" height="200"></canvas>
+</div>
+   
+<div class="velocity-graph-container">
+  <canvas id="velocityChart" width="400" height="200"></canvas>
+</div>
+
+<div class="fuel-graph-container">
+  <canvas id="fuelChart" width="400" height="200"></canvas>
+</div>
+
+<!-- Mission Timer Panel -->
+<div id="mission-timer-panel">
+  Mission Timer: <span id="mission-timer">00:00:00</span>
+</div>
+
+
+<!-- Engine Thrust Control -->
+<!-- <div id="thrust-control-panel">
+  <label for="thrust-slider">Engine Thrust: <span id="thrust-value">50%</span></label>
+  <input type="range" id="thrust-slider" min="0" max="100" value="50" />
+</div> -->
+
+
+<!-- Multistage Rocket Status Panel -->
+<div id="stage-status-panel">
+  <h3>Rocket Stages</h3>
+  <ul id="stage-list">
+    <li><strong>Stage 1:</strong> <span class="stage-status" id="stage1">Armed</span></li>
+    <li><strong>Stage 2:</strong> <span class="stage-status" id="stage2">Idle</span></li>
+    <li><strong>Stage 3:</strong> <span class="stage-status" id="stage3">Idle</span></li>
+  </ul>
+</div>
+
+
+<!-- Environment pannel -->
+<div id="environment-panel">
+  <h3>Environment</h3>
+  <ul>
+    <li><strong>Wind:</strong> <span id="wind">-- km/h, --°</span></li>
+    <li><strong>Temperature:</strong> <span id="temperature">-- °C</span></li>
+    <li><strong>Gravity:</strong> <span id="gravity">-- %</span></li>
+  </ul>
+</div>
+
+
+
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Info Boxes -->
+    <div class="side-box box-rank"><div>RANK</div><div>4.0</div></div>
+    <div class="side-box box-speed"><div>SPEED</div><div>110</div></div>
+    <div class="side-box box-agent"><div>AGENT</div><div>1</div></div>
+    <div class="side-box box-aerot"><div>AEROT</div><div>40</div></div>
+
+
+
+    <!-- Score and Mission Timer
+    <div class="top-box score-box"><strong>SCORE:</strong> <span id="score">0</span></div>
+    <div class="top-box timer-box"><strong>MISSION:</strong> <span id="mission-timer">60</span>s</div> -->
+
+    <!-- Left Buttons -->
+    <button class="btn btn-staff" onclick="alert('Staff clicked')">STAFF 1 LB</button>
+    <button class="btn btn-height" onclick="alert('Height clicked')">↕ 1m</button>
+    <button class="btn btn-parachute" onclick="alert('Parachute deployed')">PARACHUTE</button>
+
+    <!-- Bottom Buttons -->
+    <button class="btn btn-launch">🚀</button>
+    <button class="btn btn-next" onclick="alert('Next')">➡</button>
+    <button class="btn btn-rotate" onclick="startAutoRotate()">🔁</button>
+    <!-- <button class="btn btn-orientation" id="permission-btn">🎯 Enable Tilt Control</button> -->
+  </div>
+
+  <!-- 3D Scene Canvas -->
+  <canvas id="scene"></canvas>
+
+  <!-- Joystick Zone -->
+  <div id="joystick-zone" style="position: fixed; bottom: 40px; right: 40px; width: 120px; height: 120px; z-index: 10;"></div>
+
+  <!-- Joystick Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
+
+  <!-- Your JS file -->
+  <script type="module" src="/script1.js"></script>
+
+  <!-- Camera View Toggle Buttons (place inside your .overlay-ui) -->
+<div id="camera-toggle-panel">
+  <button class="camera-btn" data-view="side">Side</button>
+  <button class="camera-btn" data-view="top">Top</button>
+  <button class="camera-btn" data-view="cockpit">Cockpit</button>
+</div>
+<!-- Rocket Trail Demo Controls (Optional) -->
+<div id="trail-controls">
+  <button onclick="startRocketLaunch()">Launch Rocket</button>
+</div>
+
+<!-- Canvas -->
+<canvas id="trail-scene-canvas"></canvas>
+<div id="rocket-details-panel">
+  <h3>Rocket Details</h3>
+  <ul>
+    <li><strong>Name:</strong> <span id="rocket-name">Falcon 9</span></li>
+    <li><strong>Manufacturer:</strong> <span id="rocket-maker">SpaceX</span></li>
+    <li><strong>First Launch:</strong> <span id="rocket-first-launch">June 4, 2010</span></li>
+    <li><strong>Height:</strong> <span id="rocket-height">70 m</span></li>
+    <li><strong>Diameter:</strong> <span id="rocket-diameter">3.7 m</span></li>
+    <li><strong>Mass:</strong> <span id="rocket-mass">549,054 kg</span></li>
+    <li><strong>Payload to LEO:</strong> <span id="rocket-payload-leo">22,800 kg</span></li>
+    <li><strong>Description:</strong> <span id="rocket-desc">Two-stage rocket designed and manufactured by SpaceX for reliable and safe transport of satellites and the Dragon spacecraft into orbit.</span></li>
+  </ul>
+</div>
+
+
+<div id="mission-log-box">
+  <h4>Mission Timeline</h4>
+  <ul id="mission-log-list">
+    <!-- Events are injected here -->
+  </ul>
+</div>
+
+
+
+</body>
+</html>

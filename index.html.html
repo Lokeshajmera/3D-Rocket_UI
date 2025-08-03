@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="UTF-8" />
+  <title>3D Rocket Orbit UI</title>
+  <link rel="stylesheet" href="style2.css" />
+  <!-- Joystick Library -->
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.0/dist/nipplejs.min.js"></script>
+  
+</head>
+<body>
+  <div class="overlay-ui">
+    <!-- Info Boxes -->
+    <div class="side-box box-rank"><div>RANK</div><div>4.0</div></div>
+    <div class="side-box box-speed"><div>SPEED</div><div>110</div></div>
+    <div class="side-box box-agent"><div>AGENT</div><div>1</div></div>
+    <div class="side-box box-aerot"><div>AEROT</div><div>40</div></div>
+
+    <!-- Left Buttons -->
+    <!-- <button class="btn btn-staff" onclick="alert('Staff clicked')">STAFF 1 LB</button>
+    <button class="btn btn-height" onclick="alert('Height clicked')">↕ 1m</button> -->
+    <!-- <button class="btn btn-parachute" onclick="alert('Parachute deployed')">PARACHUTE</button> -->
+
+
+    <!-- Bottom Buttons -->
+    <button class="btn btn-launch">🚀</button>
+    <button class="btn btn-next" onclick="alert('Next')">➡</button>
+    <button class="btn btn-rotate" onclick="startAutoRotate()">🔁</button>
+   <!-- <button class="btn btn-orientation" id="permission-btn">🎯 Enable Tilt Control</button> -->
+
+  </div>
+
+  <!-- 3D Scene Canvas -->
+  <canvas id="scene"></canvas>
+
+  <!-- Joystick container -->
+  <div id="joystick-zone"></div>
+
+  <!-- JS (includes your rocket + joystick logic) -->
+  <script type="module" src="/script1.js"></script>
+  <div id="joystick-zone"></div>
+ <!-- Joystick Zone (bottom right corner) -->
+<div id="joystick-zone" style="position: fixed; bottom: 40px; right: 40px; width: 120px; height: 120px; z-index: 10;"></div>
+
+<!-- Joystick Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script><div id="joystick-zone"></div>
+
+
+</body>
+</html>
