@@ -115,9 +115,8 @@ renderer.domElement.addEventListener('mousemove', (event) => {
 });
 
 // === Load Rocket Model ===
-const loader = new GLTFLoader();
 loader.load(
-  'rocket_scene.glb',
+  '.Public/rocket_scene.glb',
   (gltf) => {
     rocket = gltf.scene;
     rocket.scale.set(0.5, 0.5, 0.5);
